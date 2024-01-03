@@ -31,17 +31,17 @@ def main():
         print("3. Search Contact")
         print("4. Quit")
 
-        choice = raw_input("Enter your choice (1/2/3/4): ")
+        choice = input("Enter your choice (1/2/3/4): ")
 
         if choice == '1':
-            name = raw_input("Enter contact name: ")
+            name = input("Enter contact name: ")
             phone_number = raw_input("Enter phone number: ")
-            email = raw_input("Enter email: ")
+            email = input("Enter email: ")
             contact_book.add_contact(name, phone_number, email)
         elif choice == '2':
             contact_book.view_contacts()
         elif choice == '3':
-            name = raw_input("Enter contact name to search: ")
+            name = input("Enter contact name to search: ")
             contact_book.search_contact(name)
         elif choice == '4':
             print("Exiting the contact book application. Goodbye!")
