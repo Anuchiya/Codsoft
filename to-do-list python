@@ -31,13 +31,13 @@ def main():
         print("3. View Tasks")
         print("4. Quit")
 
-        choice = raw_input("Enter your choice (1/2/3/4): ")
+        choice = input("Enter your choice (1/2/3/4): ")
 
         if choice == '1':
-            task = raw_input("Enter the task: ")
+            task = input("Enter the task: ")
             to_do_list.add_task(task)
         elif choice == '2':
-            task = raw_input("Enter the task to remove: ")
+            task = input("Enter the task to remove: ")
             to_do_list.remove_task(task)
         elif choice == '3':
             to_do_list.view_tasks()
