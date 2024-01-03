@@ -1,0 +1,54 @@
+class ContactBook:
+    def __init__(self):
+        self.contacts = {}
+
+    def add_contact(self, name, phone_number, email):
+        self.contacts[name] = {'Phone Number': phone_number, 'Email': email}
+        print(f"Contact '{name}' added to the contact book.")
+
+    def view_contacts(self):
+        if not self.contacts:
+            print("Contact book is empty.")
+        else:
+            print("Contact Book:")
+            for name, info in self.contacts.items():
+                print(f"Name: {name}, Phone Number: {info['Phone Number']}, Email: {info['Email']}")
+
+    def search_contact(self, name):
+        if name in self.contacts:
+            info = self.contacts[name]
+            print(f"Contact found - Name: {name}, Phone Number: {info['Phone Number']}, Email: {info['Email']}")
+        else:
+            print(f"Contact '{name}' not found in the contact book.")
+
+def main():
+    contact_book = ContactBook()
+
+    while True:
+        print("\nContact Book Application")
+        print("1. Add Contact")
+        print("2. View Contacts")
+        print("3. Search Contact")
+        print("4. Quit")
+
+        choice = raw_input("Enter your choice (1/2/3/4): ")
+
+        if choice == '1':
+            name = raw_input("Enter contact name: ")
+            phone_number = raw_input("Enter phone number: ")
+            email = raw_input("Enter email: ")
+            contact_book.add_contact(name, phone_number, email)
+        elif choice == '2':
+            contact_book.view_contacts()
+        elif choice == '3':
+            name = raw_input("Enter contact name to search: ")
+            contact_book.search_contact(name)
+        elif choice == '4':
+            print("Exiting the contact book application. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please enter a valid option (1/2/3/4).")
+
+if __name__ == "__main__":
+    main()
+
