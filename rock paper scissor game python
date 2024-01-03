@@ -2,7 +2,7 @@ import random
 
 def get_user_choice():
     while True:
-        user_choice = raw_input("Choose Rock, Paper, or Scissors: ").lower()
+        user_choice = input("Choose Rock, Paper, or Scissors: ").lower()
         if user_choice in ['rock', 'paper', 'scissors']:
             return user_choice
         else:
@@ -36,7 +36,7 @@ if __name__ == "__main__":
 
         print(result)
 
-        play_again = raw_input("Do you want to play again? (yes/no): ").lower()
+        play_again = input("Do you want to play again? (yes/no): ").lower()
         if play_again != 'yes':
             print("Thanks for playing. Goodbye!")
             break
